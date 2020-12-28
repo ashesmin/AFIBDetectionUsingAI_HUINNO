@@ -1,0 +1,17 @@
+스펙상 메모리(cc2642r.pdf 참조)
+ - 352KB of In-System Programmable Flash
+ - 8KB of Cache SRAM (Available as GeneralPurpose RAM)
+
+실제 ccs로 디버깅을 한 결과
+
+1. ADS1292(ECG 모듈)에서 SPI통신을 이용해 보드에 값을 받는 프로젝트
+			used	/	allocated
+ - Flash : 			25,300	/	360,448		(7%)
+ - GPRAM :		0	/ 	8,192		(0%)
+ - SRAM : 		9,275	/	81,920		(11%)
+
+2. simple_peripheral 프로젝트
+			used	/	allocated
+ - Flash : 			156,146	/	352,256		(44%)
+ - FLASH_LAST_PAGE :	88	/ 	8,192		(1%)
+ - SRAM : 		11,076	/	79,096		(14%)
